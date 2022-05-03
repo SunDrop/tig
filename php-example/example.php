@@ -1,12 +1,13 @@
 <?php
 
 declare(strict_types=1);
+
 require __DIR__ . '/vendor/autoload.php';
 
 $statsd = new League\StatsD\Client();
 $statsd->configure([
-    'host'      => '127.0.0.1',
-    'port'      => 8125,
+    'host'      => getenv('PROJECT_HOSTNAME') ?? '127.0.0.1',
+    'port'      => getenv('TELEGRAF_PORT') ?? 8125,
     'namespace' => 'performance'
 ]);
 

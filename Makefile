@@ -9,7 +9,7 @@ help:
 	@echo "\033[32mmake logs \033[0m- show logs"
 
 up:
-	CURRENT_UID=$(id -u):$(id -g) docker-compose up
+	CURRENT_UID=$(id -u):$(id -g) docker-compose up -d
 
 down:
 	docker-compose down
@@ -23,7 +23,7 @@ php:
 
 php-run:
 	@echo "\033[32mRun the PHP Example...\033[0m"
-	docker-compose exec php php /var/www/html/example.php
+	docker-compose exec php php /app/src/example.php
 
 db:
 	@echo "\033[32mEntering into influx container...\033[0m"

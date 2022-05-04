@@ -1,6 +1,7 @@
 {
     "require": {
         "league/statsd": "^1.5",
-        "ext-pcntl": "*"
+        "ext-pcntl": "*",
+        "mongodb/mongodb": "^1.12"
     }
 }

@@ -10,7 +10,14 @@ RUN composer install \
 
 
 FROM php:8-fpm
-WORKDIR /var/www/html
+
 RUN docker-php-ext-install pcntl
-COPY . /var/www/html
-COPY --from=vendor /app/vendor/ /var/www/html/vendor/
+
+RUN pecl install mongodb \
+    &&  echo "extension=mongodb.so" > $PHP_INI_DIR/conf.d/mongo.ini
+
+COPY --from=vendor /app/vendor/ /app/vendor/
+
+WORKDIR /app
+
+CMD ["php-fpm"]

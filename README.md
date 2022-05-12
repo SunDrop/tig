@@ -133,6 +133,14 @@ Ops/s:		30.548965899738
 Killed by Ctrl+C
 ```
 
+## Monotoring
+![Run load](/docs/tig-up.png?raw=true "Run load")
+![Stop load](/docs/tig-down.png?raw=true "Stop load")
+1) make php-run - load on php-cli
+2) http://tig.local/ - open the local Nginx in the browser. There, in an endless loop, connections to MongoDB are created.
+
+In picture No. 1 - we gave the load, in picture No. 2 - the load was removed.
+
 ## License
 
 The MIT License (MIT). Please see [License File](LICENSE) for more information.
